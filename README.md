@@ -1,4 +1,4 @@
-# 14_projects
+# 14_projects - Js Completo 2020
 ## 14 mini projetos para praticar Js
 <p>1- Trocando valores de variáveis</p>
 <p>2- Máximo entre valores</p>
