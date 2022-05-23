@@ -92,3 +92,33 @@ let nasc = 1990;
 let menor = (2022-nasc) < 18 ? true : false;
 console.log(false || menor || nome || idade);/*Irá retornar 'Jefferson', pois é o primeiro valor que se 
 enquadra na lista Truthy*/
+//Estruturas condicionais
+//if else (simples e composta)
+//Se a hora estiver entre 06:00 e 12:00 = Bom dia
+//Se a hora estiver entre 12:00 e 18:00 = Boa tarde
+//Se não = Boa noite
+let hora = 5;
+if (hora > 6 && hora < 12){
+    console.log('Bom dia!');
+}else if(hora >= 12 && hora < 18){
+    console.log('Boa tarde...');
+}else{
+    console.log('Boa noite!');
+};
+//Switch case
+let permission;
+permission = 'ajudante';
+
+switch(permission){
+    case 'comum':
+    console.log('Usuário Comum!');
+    break;
+    case 'gerente':
+    console.log('Gerente!');
+    break;
+    case 'Diretor':
+    console.log('Diretor!');
+    break;
+    default:
+    console.log('Tipo de usuário não reconhecido...');
+};
