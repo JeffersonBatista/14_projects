@@ -122,3 +122,38 @@ switch(permission){
     default:
     console.log('Tipo de usuário não reconhecido...');
 };
+//Estruturas de repetição
+//For
+for(let i = 0; i < 5; i++){
+    console.log(`Estou aprendendo rápido... ${i+1}`);
+};
+//While
+let i = 0;
+while(i < 5){
+    console.log(`contando... ${i+1}`)
+    i++;
+};
+//Do While
+i = 0;
+do{
+    console.log(`digitando... ${i+1}`);
+    i++;
+}while(i < 10)
+//For in
+const pessoa ={
+    nome: 'Jefferson',
+    idade: 32
+};
+
+for(let chave in pessoa){
+    console.log(chave, pessoa.nome);
+};
+const cores = ['Preto', 'Rosa', 'Verde', 'Azul'];
+for(let indice in cores){
+    console.log(indice, cores[indice]);
+};
+//For of - muito parecido com o for in, mas é simples e mostra o que esta dentro de cada íncice
+const cores = ['Preto', 'Rosa', 'Verde', 'Azul'];
+for(let cor of cores){
+    console.log(cor);
+}
