@@ -1,6 +1,5 @@
 numerosPrimos(15);
 
-
 function numerosPrimos(limite){
     for(let numero = 2; numero <= limite; numero++){
         let ehPrimo = true;
