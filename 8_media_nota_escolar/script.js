@@ -1,8 +1,32 @@
 const array = [100,100,100,90];
 
 console.log(mediaAluno(array));
+console.log(`A média do aluno foi ${media} pontos.`);
 
-function mediaAluno(notas){
+//Aplicando um conceito de responsabilidade única para cada função e otimizando a sequência de if
+
+    function calculaMedia(array){
+        let total = 0;
+        for(let valor of array){
+            total+=valor;
+        }    
+        return media = (total/array.length);
+    }
+
+    function mediaAluno(notas){
+    let media = calculaMedia(notas);
+    if (media < 39) return `Aluno abaixo da expectativa, deve regredir um semestre!`;
+    if (media < 49) return `F - Péssimo - Aluno Reprovado!`;
+    if (media < 59) return `E - Ruim - Aluno Reprovado!`;
+    if (media < 69) return `D - Bom - Aluno Aprovado!`;
+    if (media < 79) return `C - Muito bom - Aluno Aprovado!`;
+    if (media < 89) return `B - Ótimo - Aluno Aprovado!`;
+    return `A - Excelente - Aluno Aprovado!`
+    }
+
+    /* Código inicial
+
+    function mediaAluno(notas){
     let total = 0;
     for(let nota of notas){
         total+=nota;
@@ -25,13 +49,4 @@ function mediaAluno(notas){
         console.log(`Aluno abaixo da expectativa, deve regredir um semestre!`)
     }
 }
-
-//Jeito mais limpo de fazer a sequência de if
-/* if (media < 39) return `Aluno abaixo da expectativa, deve regredir um semestre!`;
-    if (media < 49) return `F - Péssimo - Aluno Reprovado!`;
-    if (media < 59) return `E - Ruim - Aluno Reprovado!`;
-    if (media < 69) return `D - Bom - Aluno Aprovado!`;
-    if (media < 79) return `C - Muito bom - Aluno Aprovado!`;
-    if (media < 89) return `B - Ótimo - Aluno Aprovado!`;
-    return `A - Excelente - Aluno Aprovado!`
-    */
+*/
