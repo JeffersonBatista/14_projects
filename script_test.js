@@ -1,16 +1,22 @@
-/*Os objetos em Js são dinâmicos, ou seja, é possível adicionar ou excluir 
-parâmetros e funções durante todo o código, */
-const mouse = {
-    marca : 'Logitech',
-    cor : 'Cinza e preto'
+//Clonando objetos em Js e adicionando propriedades
+const celular = {
+    marcaCelular : 'Samsung',
+    tamanhoTela : {
+        vertical : 155,
+        horizontal : 75
+    },
+    capacidadeBateria : 5000,
+    ligar : function(){
+        console.log('Fazendo uma ligação...')
+    }
 }
-console.log(mouse);
-//Acrescentando um atributo e uma função
-mouse.velocidade = 600;
-mouse.trocarDPI = function(){
-    console.log('Trocando DPI...');
-}
-console.log(mouse);
-//Excluindo a função
-delete mouse.trocarDPI;
-console.log(mouse);
+console.log(celular);
+//Clonagem simples
+const celular2 = {...celular};//técnica spread
+console.log(celular2);
+
+//Clonagem composta
+const celular3 = Object.assign({
+    tipoFone : 'bluetoth'
+},celular);
+console.log(celular3);//Vai herdar todas as propriedades do objeto principal + a que foi criada no clone
