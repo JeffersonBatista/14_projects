@@ -177,3 +177,33 @@ function fizzBuzz(entrada){
         return 'Buzz';
     return entrada;    
 }
+
+//Factory Functions(Funções de fábrica)
+const celular = {
+    marcaCelular : 'Samsung',
+    tamanhoTela : {
+        vertical : 155,
+        horizontal : 75
+    },
+    capacidadeBateria : 5000,
+    ligar : function(){
+        console.log('Fazendo uma ligação...')
+    }
+}
+console.log(celular);
+/*Caso eu precisasse criar vários modelos de celular, este código seria improdutivo, pois eu teria que criar varias
+cópias do mesmo objeto, tornaria o código muito extenso...
+Uma Factory Function encapsula toda a informação e transforma em um padrão de objeto*/
+
+function criarCelular(marcaCelular,tamanhoTela,capacidadeBateria){
+    return {//Quando algo é criado, é necessário retornar um valor
+        marcaCelular : marcaCelular,//Quando uma declaração tem Key e value com o mesmo nome, podemos deixar só o Key(conforme o tamanhoTela e capacidadeBateria)
+        tamanhoTela,
+        capacidadeBateria,
+        ligar(){//Ligar pode ser uma função direta, ao invés de receber o resultado de uma função
+            console.log('Fazendo uma ligação...')
+        }
+    }
+}//Uma função limpa, otimizada, que pode ser usada em qualquer lugar do código, passando somente os parâmetros, facilitando a manutenção
+const celular1 = criarCelular('Motorola',7.6,6000);
+console.log(celular1);
