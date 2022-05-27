@@ -194,7 +194,7 @@ console.log(celular);
 /*Caso eu precisasse criar vários modelos de celular, este código seria improdutivo, pois eu teria que criar varias
 cópias do mesmo objeto, tornaria o código muito extenso...
 Uma Factory Function encapsula toda a informação e transforma em um padrão de objeto*/
-
+//camelCase - primeira letra minuscula
 function criarCelular(marcaCelular,tamanhoTela,capacidadeBateria){
     return {//Quando algo é criado, é necessário retornar um valor
         marcaCelular : marcaCelular,//Quando uma declaração tem Key e value com o mesmo nome, podemos deixar só o Key(conforme o tamanhoTela e capacidadeBateria)
@@ -207,3 +207,19 @@ function criarCelular(marcaCelular,tamanhoTela,capacidadeBateria){
 }//Uma função limpa, otimizada, que pode ser usada em qualquer lugar do código, passando somente os parâmetros, facilitando a manutenção
 const celular1 = criarCelular('Motorola',7.6,6000);
 console.log(celular1);
+//Function Constructor
+//PascalCase - todas as letras iniciais maiúsculas
+function Celular(marcaCelular,tamanhoTela,capacidadeBateria){
+    this.marcaCelular = marcaCelular,//o this. serve para referenciar o objeto atual
+    this.tamanhoTela = tamanhoTela,
+    this.capacidadeBateria = capacidadeBateria
+    this.ligar = function(){
+        console.log('Fazendo ligação...');
+    }
+}
+
+const celular2 = new Celular('Apple', 5.5, 6200);
+console.log(celular2);
+
+/* Tanto a factory function quanto a constructor function executam a mesma função, sendo apenas diferenciadas
+pela sintaxe, sendo de livre escolha e gosto de cada desenvolvedor */
